@@ -31,7 +31,7 @@ const baseConfig = {
 
 const themeConfigs = [
   {
-    name: THEMES.LIGHT,
+    name: THEMES.LIGHT1,
     overrides: {
       MuiInputBase: {
         input: {
@@ -56,7 +56,41 @@ const themeConfigs = [
         main: '#0246fa'
       },
       secondary: {
-        main: '#5850EC'
+        main: '#0246fa'
+      },
+      text: {
+        primary: colors.blueGrey[900],
+        secondary: colors.blueGrey[600]
+      }
+    },
+    shadows: softShadows
+  },{
+    name: THEMES.LIGHT2,
+    overrides: {
+      MuiInputBase: {
+        input: {
+          '&::placeholder': {
+            opacity: 1,
+            color: colors.blueGrey[600]
+          }
+        }
+      }
+    },
+    palette: {
+      type: 'light',
+      action: {
+        active: colors.blueGrey[600]
+      },
+      background: {
+        default: colors.common.white,
+        dark: '#f4f6f8',
+        paper: colors.common.white
+      },
+      primary: {
+        main: '#001ec6'
+      },
+      secondary: {
+        main: '#0246fa'
       },
       text: {
         primary: colors.blueGrey[900],
