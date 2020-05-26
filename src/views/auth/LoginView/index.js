@@ -87,26 +87,10 @@ function LoginView() {
       title="Login"
     >
       <Container maxWidth="md">
-        <Box
-          mb={8}
-          display="flex"
-          alignItems="center"
-        >
-          <RouterLink to="/">
-            <Logo />
-          </RouterLink>
-          <Button
-            component={RouterLink}
-            to="/"
-            className={classes.backButton}
-          >
-            Back to home
-          </Button>
-        </Box>
         <Card className={classes.card}>
           <CardContent className={classes.content}>
             <Avatar className={classes.icon}>
-              <LockIcon fontSize="large" />
+              <LockIcon fontSize="large"/>
             </Avatar>
             <Typography
               variant="h2"
@@ -118,28 +102,13 @@ function LoginView() {
               variant="subtitle1"
               color="textSecondary"
             >
-              Sign in on the internal platform
+              Sign in to your account
             </Typography>
-            <Box mt={2}>
-              <Alert
-                severity="info"
-              >
-                <div>
-                  Use
-                  {' '}
-                  <b>admin@devias.io</b>
-                  {' '}
-                  and password
-                  {' '}
-                  <b>admin</b>
-                </div>
-              </Alert>
-            </Box>
             <Box mt={3}>
-              <LoginForm onSubmitSuccess={handleSubmitSuccess} />
+              <LoginForm onSubmitSuccess={handleSubmitSuccess}/>
             </Box>
             <Box my={2}>
-              <Divider />
+              <Divider/>
             </Box>
             <Link
               component={RouterLink}
@@ -155,37 +124,6 @@ function LoginView() {
             image="/static/images/auth.png"
             title="Cover"
           >
-            <Typography
-              color="inherit"
-              variant="subtitle1"
-            >
-              Hella narvwhal Cosby sweater McSweeney&apos;s,
-              salvia kitsch before they sold out High Life.
-            </Typography>
-            <Box
-              alignItems="center"
-              display="flex"
-              mt={3}
-            >
-              <Avatar
-                alt="Person"
-                src="/static/images/avatars/avatar_2.png"
-              />
-              <Box ml={3}>
-                <Typography
-                  color="inherit"
-                  variant="body1"
-                >
-                  Ekaterina Tankova
-                </Typography>
-                <Typography
-                  color="inherit"
-                  variant="body2"
-                >
-                  Manager at inVision
-                </Typography>
-              </Box>
-            </Box>
           </CardMedia>
         </Card>
       </Container>

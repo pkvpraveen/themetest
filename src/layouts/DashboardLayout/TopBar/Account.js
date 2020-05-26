@@ -6,6 +6,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSnackbar } from 'notistack';
+import { ChevronDown } from 'react-feather';
 import {
   Avatar,
   Box,
@@ -67,18 +68,14 @@ function Account() {
         onClick={handleOpen}
         ref={ref}
       >
-        <Avatar
-          alt="User"
-          className={classes.avatar}
-          src={account.user.avatar}
-        />
         <Hidden smDown>
           <Typography
             variant="h6"
             color="inherit"
           >
-            {`${account.user.firstName} ${account.user.lastName}`}
+            Site Name
           </Typography>
+          <ChevronDown/>
         </Hidden>
       </Box>
       <Menu

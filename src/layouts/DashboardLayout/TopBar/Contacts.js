@@ -24,7 +24,7 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
-import { Users as UsersIcon } from 'react-feather';
+import { User as UsersIcon } from 'react-feather';
 import OnlineIndicator from 'src/components/OnlineIndicator';
 import { getContacts } from 'src/actions/chatActions';
 

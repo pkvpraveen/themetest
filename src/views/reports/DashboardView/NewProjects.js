@@ -1,15 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import {
-  Avatar,
-  Box,
-  Card,
-  Typography,
-  makeStyles
-} from '@material-ui/core';
-import FolderOpenIcon from '@material-ui/icons/FolderOpenOutlined';
-import Label from 'src/components/Label';
+import { Avatar, Box, Card, colors, makeStyles, Typography } from '@material-ui/core';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import { Info as InfoIcon } from 'react-feather';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,7 +42,7 @@ function NewProjects({ className, ...rest }) {
           variant="overline"
           color="textSecondary"
         >
-          New projects
+          Bounce Rate <InfoIcon size={15} color={colors.lightBlue[500]}/>
         </Typography>
         <Box
           display="flex"
@@ -59,20 +53,12 @@ function NewProjects({ className, ...rest }) {
             variant="h3"
             color="textPrimary"
           >
-            {data.value}
+            {data.value} %
           </Typography>
-          <Label
-            className={classes.label}
-            color={data.difference > 0 ? 'success' : 'error'}
-          >
-            {data.difference > 0 ? '+' : ''}
-            {data.difference}
-            %
-          </Label>
         </Box>
       </Box>
       <Avatar className={classes.avatar}>
-        <FolderOpenIcon />
+        <PersonAddIcon />
       </Avatar>
     </Card>
   );

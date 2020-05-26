@@ -6,8 +6,8 @@ import {
 } from '@material-ui/core';
 import Page from 'src/components/Page';
 import CustomerActivity from './CustomerActivity';
-import EarningsSegmentation from './EarningsSegmentation';
-import FinancialStats from './FinancialStats';
+import EarningsSegmentation from '../DashboardView/EarningsSegmentation';
+import FinancialStats from '../DashboardView/FinancialStats';
 import Header from './Header';
 import LatestOrders from './LatestOrders';
 import MostProfitableProducts from './MostProfitableProducts';
