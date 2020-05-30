@@ -6,10 +6,9 @@ import {
   Box,
   Card,
   Typography,
-  makeStyles, colors
+  makeStyles
 } from '@material-ui/core';
-import Person from '@material-ui/icons/Person';
-import {Info as InfoIcon} from 'react-feather';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import Label from 'src/components/Label';
 
 const useStyles = makeStyles((theme) => ({
@@ -30,10 +29,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function TotalGuests({ className, ...rest }) {
+function TodaysMoney({ className, ...rest }) {
   const classes = useStyles();
   const data = {
     value: '24,000',
+    currency: '$',
+    difference: 4
   };
 
   return (
@@ -48,7 +49,7 @@ function TotalGuests({ className, ...rest }) {
           variant="overline"
           color="textSecondary"
         >
-          Total Guests <InfoIcon size={15} color={colors.lightBlue[500]}/>
+          Todays money
         </Typography>
         <Box
           display="flex"
@@ -59,19 +60,28 @@ function TotalGuests({ className, ...rest }) {
             variant="h3"
             color="textPrimary"
           >
+            {data.currency}
             {data.value}
           </Typography>
+          <Label
+            className={classes.label}
+            color={data.difference > 0 ? 'success' : 'error'}
+          >
+            {data.difference > 0 ? '+' : ''}
+            {data.difference}
+            %
+          </Label>
         </Box>
       </Box>
       <Avatar className={classes.avatar}>
-        <Person/>
+        <AttachMoneyIcon />
       </Avatar>
     </Card>
   );
 }
 
-TotalGuests.propTypes = {
+TodaysMoney.propTypes = {
   className: PropTypes.string
 };
 
-export default TotalGuests;
+export default TodaysMoney;

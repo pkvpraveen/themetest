@@ -6,12 +6,9 @@ import {
   Box,
   Card,
   Typography,
-  makeStyles, colors
+  makeStyles
 } from '@material-ui/core';
-import {
-  Info as InfoIcon,
-  Wifi as WifiIcon
-} from 'react-feather';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
 function RoiPerCustomer({ className, ...rest }) {
   const classes = useStyles();
   const data = {
-    value: '40'
+    value: '25.50',
+    currency: '$'
   };
 
   return (
@@ -48,7 +46,7 @@ function RoiPerCustomer({ className, ...rest }) {
           gutterBottom
           variant="overline"
         >
-          Online Now <InfoIcon size={15} color={colors.lightBlue[500]}/>
+          Roi per customer
         </Typography>
         <Box
           display="flex"
@@ -59,6 +57,7 @@ function RoiPerCustomer({ className, ...rest }) {
             color="inherit"
             variant="h3"
           >
+            {data.currency}
             {data.value}
           </Typography>
         </Box>
@@ -67,7 +66,7 @@ function RoiPerCustomer({ className, ...rest }) {
         className={classes.avatar}
         color="inherit"
       >
-        <WifiIcon color={colors.green[500]}/>
+        <AttachMoneyIcon />
       </Avatar>
     </Card>
   );

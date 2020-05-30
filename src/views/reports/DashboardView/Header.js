@@ -57,11 +57,30 @@ function Header({ className, ...rest }) {
       {...rest}
     >
       <Grid item>
+        <Breadcrumbs
+          separator={<NavigateNextIcon fontSize="small" />}
+          aria-label="breadcrumb"
+        >
+          <Link
+            variant="body1"
+            color="inherit"
+            to="/app"
+            component={RouterLink}
+          >
+            Dashboard
+          </Link>
+          <Typography
+            variant="body1"
+            color="textPrimary"
+          >
+            Reports
+          </Typography>
+        </Breadcrumbs>
         <Typography
           variant="h3"
           color="textPrimary"
         >
-          Dashboard
+          Here&apos;s what&apos;s happening
         </Typography>
       </Grid>
       <Grid item>

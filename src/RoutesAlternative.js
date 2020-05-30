@@ -9,6 +9,8 @@ import {
 } from 'react-router-dom';
 import DashboardLayout from 'src/layouts/DashboardLayout';
 import DocsLayout from 'src/layouts/DocsLayout';
+import MainLayout from 'src/layouts/MainLayout';
+import HomeView from 'src/views/pages/HomeView';
 import LoadingScreen from 'src/components/LoadingScreen';
 import AuthRoute from 'src/components/AuthRoute';
 import GuestRoute from 'src/components/GuestRoute';
@@ -288,6 +290,26 @@ function Routes() {
                 </Switch>
               </Suspense>
             </DocsLayout>
+          )}
+        />
+        <Route
+          path="*"
+          render={(props) => (
+            <MainLayout {...props}>
+              <Switch>
+                <Route
+                  exact
+                  path="/home"
+                  component={HomeView}
+                />
+                <Route
+                  exact
+                  path="/pricing"
+                  component={lazy(() => import('src/views/pages/PricingView'))}
+                />
+                <Redirect to="/404" />
+              </Switch>
+            </MainLayout>
           )}
         />
         <Redirect to="/404" />

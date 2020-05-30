@@ -1,15 +1,19 @@
 import React from 'react';
-import { Container, Grid, makeStyles } from '@material-ui/core';
+import {
+  Container,
+  Grid,
+  makeStyles
+} from '@material-ui/core';
 import Page from 'src/components/Page';
 import Header from './Header';
 import LatestProjects from './LatestProjects';
-import BounceRate from './NewProjects';
+import NewProjects from './NewProjects';
+import PerformanceOverTime from './PerformanceOverTime';
+import RealTime from './RealTime';
 import RoiPerCustomer from './RoiPerCustomer';
 import SystemHealth from './SystemHealth';
 import TeamTasks from './TeamTasks';
-import TotalGuests from './TotalGuests';
-import FinancialStats from './FinancialStats';
-import EarningsSegmentation from './EarningsSegmentation';
+import TodaysMoney from './TodaysMoney';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,7 +53,7 @@ function DashboardView() {
             sm={6}
             xs={12}
           >
-            <TotalGuests />
+            <TodaysMoney />
           </Grid>
           <Grid
             item
@@ -57,7 +61,7 @@ function DashboardView() {
             sm={6}
             xs={12}
           >
-            <BounceRate />
+            <NewProjects />
           </Grid>
           <Grid
             item
@@ -77,19 +81,17 @@ function DashboardView() {
           </Grid>
           <Grid
             item
-            lg={8}
-            xl={9}
+            lg={3}
             xs={12}
           >
-            <FinancialStats />
+            <RealTime />
           </Grid>
           <Grid
             item
-            lg={4}
-            xl={3}
+            lg={9}
             xs={12}
           >
-            <EarningsSegmentation />
+            <PerformanceOverTime />
           </Grid>
           <Grid
             item

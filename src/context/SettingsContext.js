@@ -13,7 +13,7 @@ const SettingsContext = createContext();
 const defaultSettings = {
   direction: 'ltr',
   responsiveFontSizes: true,
-  theme: THEMES.LIGHT1
+  theme: THEMES.ONE_DARK
 };
 
 export function SettingsProvider({ settings, children }) {
